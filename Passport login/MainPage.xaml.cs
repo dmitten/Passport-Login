@@ -1,4 +1,5 @@
-﻿using Passport_login.Views;
+﻿using Passport_login.Utils;
+using Passport_login.Views;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -29,9 +30,11 @@ namespace Passport_login
             Loaded += MainPage_Loaded;
         }
 
-        private void MainPage_Loaded(object sender, RoutedEventArgs e)
+        private async void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(Login));
+            // Load the local Accounts List before navigating to the UserSelection page
+            await AccountHelper.LoadAccountListAsync();
+            Frame.Navigate(typeof(UserSelection));
         }
     }
 }
