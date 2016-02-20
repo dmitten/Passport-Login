@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Passport_login.Models
-{
+{ 
     public class Account
     {
         public string Username { get; set; }
