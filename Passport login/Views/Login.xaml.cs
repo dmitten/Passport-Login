@@ -56,6 +56,7 @@ namespace Passport_login.Views
         private void RegisterButtonTextBlock_OnPointerPressed(object sender, PointerRoutedEventArgs e)
         {
             ErrorMessage.Text = "";
+            Frame.Navigate(typeof(PassportRegister));
         }
 
         private async void SignInPassport()
