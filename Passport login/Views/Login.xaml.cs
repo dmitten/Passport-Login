@@ -76,8 +76,8 @@ namespace Passport_login.Views
 
 
                 Debug.WriteLine("Successfully signed in with Microsoft Passport!");
-               
-                
+                AccountHelper.AddAccount(UsernameTextBox.Text);
+
             }
                 
             //}
@@ -86,7 +86,7 @@ namespace Passport_login.Views
                 ErrorMessage.Text = "Invalid Credentials";
             }
               
-            AccountHelper.AddAccount(UsernameTextBox.Text);
+            
             //CoreApplication.Exit();
         }
     }
