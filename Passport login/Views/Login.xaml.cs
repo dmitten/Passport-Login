@@ -6,8 +6,10 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Security.Credentials;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -30,6 +32,8 @@ namespace Passport_login.Views
         public Login()
         {
             this.InitializeComponent();
+            SignInPassport();
+          
         }
 
         protected override async void OnNavigatedTo(NavigationEventArgs e)
@@ -61,21 +65,29 @@ namespace Passport_login.Views
 
         private async void SignInPassport()
         {
-            if (AccountHelper.ValidateAccountCredentials(UsernameTextBox.Text))
-            {
+            //if (AccountHelper.ValidateAccountCredentials(UsernameTextBox.Text))
+            //{
                 // Create and add a new local account
-                _account = AccountHelper.AddAccount(UsernameTextBox.Text);
+                //_account = AccountHelper.AddAccount(UsernameTextBox.Text);
                 Debug.WriteLine("Successfully signed in with traditional credentials and created local account instance!");
-
+                
                 if (await MicrosoftPassportHelper.CreatePassportKeyAsync(UsernameTextBox.Text))
                 {
-                    Debug.WriteLine("Successfully signed in with Microsoft Passport!");
-                }
+
+
+                Debug.WriteLine("Successfully signed in with Microsoft Passport!");
+               
+                
             }
+                
+            //}
             else
             {
                 ErrorMessage.Text = "Invalid Credentials";
             }
+              
+            AccountHelper.AddAccount(UsernameTextBox.Text);
+            //CoreApplication.Exit();
         }
     }
 }

@@ -33,12 +33,13 @@ namespace Passport_login.Views
 
         private void UserSelection_Loaded(object sender, RoutedEventArgs e)
         {
+            Account a = new Account();
+            a.Username = "dmitten";
             if (AccountHelper.AccountList.Count == 0)
             {
                 //If there are no accounts navigate to the LoginPage
                 Frame.Navigate(typeof(Login));
             }
-
 
             UserListView.ItemsSource = AccountHelper.AccountList;
             UserListView.SelectionChanged += UserSelectionChanged;

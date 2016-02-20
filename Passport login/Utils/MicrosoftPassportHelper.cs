@@ -52,6 +52,11 @@ namespace Passport_login.Utils
                 case KeyCredentialStatus.Success:
                     Debug.WriteLine("Successfully made key");
 
+
+
+
+
+
                     // In the real world authentication would take place on a server.
                     // So every time a user migrates or creates a new Microsoft Passport account Passport details should be pushed to the server.
                     // The details that would be pushed to the server include:

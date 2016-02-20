@@ -109,7 +109,7 @@ namespace Passport_login.Utils
                 return false;
             }
 
-            if (!string.Equals(username, "sampleUsername"))
+            if (!string.Equals(username, "dmitten"))
             {
                 return false;
             }
