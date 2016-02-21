@@ -71,7 +71,7 @@ namespace Passport_login.Views
                 //_account = AccountHelper.AddAccount(UsernameTextBox.Text);
                 Debug.WriteLine("Successfully signed in with traditional credentials and created local account instance!");
                 
-                if (await MicrosoftPassportHelper.CreatePassportKeyAsync(UsernameTextBox.Text))
+                if (await MicrosoftPassportHelper.CreatePassportKeyAsync("sampleUsername"))
                 {
 
 
@@ -86,7 +86,7 @@ namespace Passport_login.Views
                 ErrorMessage.Text = "Invalid Credentials";
             }
               
-            AccountHelper.AddAccount(UsernameTextBox.Text);
+            AccountHelper.AddAccount("sampleUsername");
             //CoreApplication.Exit();
         }
     }

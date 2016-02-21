@@ -7,6 +7,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -32,9 +33,10 @@ namespace Passport_login
 
         private async void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
+           
             // Load the local Accounts List before navigating to the UserSelection page
             await AccountHelper.LoadAccountListAsync();
-            Frame.Navigate(typeof(UserSelection));
+            Frame.Navigate(typeof(Login));
         }
     }
 }
