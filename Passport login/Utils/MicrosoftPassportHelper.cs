@@ -45,6 +45,7 @@ namespace Passport_login.Utils
         /// <returns>Boolean representing if creating the Passport key succeeded</returns>
         public static async Task<bool> CreatePassportKeyAsync(string accountId)
         {
+            string t = "";
             KeyCredentialRetrievalResult keyCreationResult = await KeyCredentialManager.RequestCreateAsync(accountId, KeyCredentialCreationOption.ReplaceExisting);
 
             switch (keyCreationResult.Status)

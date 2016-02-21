@@ -27,6 +27,7 @@ namespace Passport_login.Utils
 
             if (File.Exists(_accountListPath))
             {
+                //path
                 StorageFile accountsFile = await StorageFile.GetFileFromPathAsync(_accountListPath);
                 await FileIO.WriteTextAsync(accountsFile, accountsXml);
             }

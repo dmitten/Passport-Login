@@ -10,6 +10,7 @@ using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Security.Credentials;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -32,6 +33,9 @@ namespace Passport_login.Views
         public Login()
         {
             this.InitializeComponent();
+            ApplicationView.PreferredLaunchViewSize = new Size(300, 300);
+            ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
+
             SignInPassport();
           
         }
